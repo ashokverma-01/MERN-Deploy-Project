@@ -15,12 +15,12 @@ app.use(cors());
 
 const _dirname = path.resolve();
 
-app.use(express.static(path.join(_dirname, "frontend/build")));
+app.use(express.static(path.join(_dirname, "frontend", "dist")));
 
 app.use("/user", userRote);
 
 app.get("*", (_, res) => {
-  res.sendFile(path.resolve(_dirname, "frontend/build", "index.html"));
+  res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
 });
 // Start the server
 app.listen(PORT, () => {
