@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3005;
 app.use(express.json());
 
 const corsOptions = {
-  origin: "https://mern-deploy-project.onrender.com",
+  origin: "https://mern-deploy-project-1.onrender.com",
   credentials: true,
 };
 app.use(cors(corsOptions));
