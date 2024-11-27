@@ -23,7 +23,7 @@ const Login = () => {
         password: values.password,
       };
       const response = await axios.post(
-        "http://localhost:6001/user/login",
+        "https://mern-deploy-project.onrender.com/user/login",
         userDetails
       );
       localStorage.setItem("authToken", response.data.token);

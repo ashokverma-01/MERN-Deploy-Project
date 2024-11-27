@@ -11,7 +11,12 @@ const app = express();
 
 const PORT = process.env.PORT || 3005;
 app.use(express.json());
-app.use(cors());
+
+const corsOptions = {
+  origin: "https://mern-deploy-project.onrender.com",
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 const _dirname = path.resolve();
 
@@ -24,5 +29,5 @@ app.get("*", (_, res) => {
 });
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on https://localhost:${PORT}`);
 });

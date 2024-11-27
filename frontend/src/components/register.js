@@ -22,7 +22,10 @@ const Register = () => {
         email: values.email,
         password: values.password,
       };
-      await axios.post("http://localhost:6001/user/register", userDetails);
+      await axios.post(
+        "https://mern-deploy-project.onrender.com/user/register",
+        userDetails
+      );
       ShowToast("User Register successfully", Severty.SUCCESS);
       resetForm();
       Navigate("/login");
