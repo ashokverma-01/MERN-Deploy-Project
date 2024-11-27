@@ -1,12 +1,14 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 mongoose
-  .connect(
-    "mongodb+srv://ashokvarma9636:IvPjndYSz5Jhc5zw@media-app.y1vlh.mongodb.net/media-app?retryWrites=true&w=majority&appName=Mern_Deploy"
-  )
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
-    console.log("MongoDb connection successfully");
+    console.log("MongoDB connection successfully");
   })
   .catch((e) => {
-    console.log(e);
+    console.error("Error connecting to MongoDB:", e.message);
   });
